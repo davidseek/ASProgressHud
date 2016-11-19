@@ -18,7 +18,7 @@ class ExampleViewController: UIViewController {
     
     @IBAction func showWhiteHUD() {
         
-        _ = ASProgressHud.showHUDAddedTo(self.view, animated: true, type: .default)
+        _ = ASProgressHud.showHUDAddedTo(view: self.view, animated: true, type: .Default)
         print("Hud SHOW")
         
         self.hideAfterDelay()
@@ -26,7 +26,7 @@ class ExampleViewController: UIViewController {
     
     @IBAction func showGoogleHUD() {
         
-        ASProgressHud.showHUDAddedTo(self.view, animated: true, type: .google)
+        _ = ASProgressHud.showHUDAddedTo(view: self.view, animated: true, type: .Google)
         print("Hud SHOW")
         
         self.hideAfterDelay()
@@ -34,7 +34,7 @@ class ExampleViewController: UIViewController {
     
     @IBAction func showFlagHUD() {
         
-        ASProgressHud.showHUDAddedTo(self.view, animated: true, type: .flag)
+        _ = ASProgressHud.showHUDAddedTo(view: self.view, animated: true, type: .Flag)
         print("Hud SHOW")
         
         self.hideAfterDelay()
@@ -43,7 +43,7 @@ class ExampleViewController: UIViewController {
     @IBAction func showCustomHUD() {
         
         let property = HudProperty(prefixName: "coffee", frameNumber: 13, size: 70, backgroundColor: UIColor.yellow)
-        ASProgressHud.showCustomHUDAddedTo(self.view, animated: true, property: property)
+        _ = ASProgressHud.showCustomHUDAddedTo(view: self.view, animated: true, property: property)
         print("Hud SHOW")
         
         self.hideAfterDelay()
@@ -51,7 +51,7 @@ class ExampleViewController: UIViewController {
     
     func hideAfterDelay() {
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
-            ASProgressHud.hideHUDForView(self.view, animated: true)
+            _ = ASProgressHud.hideHUDForView(view: self.view, animated: true)
             print("Hud HIDE")
         }
     }
